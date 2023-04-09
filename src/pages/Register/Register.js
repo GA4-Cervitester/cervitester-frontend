@@ -17,7 +17,7 @@ export default function Register(props) {
   let userType;
   if (props.location.userType === undefined) {
     //history.push('/userSelect')
-    props.location.userType = "doctor";
+    props.location.userType = "patient";
   } else {
     userType = props.location.userType;
   }

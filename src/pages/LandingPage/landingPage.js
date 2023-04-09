@@ -64,25 +64,26 @@ export default function landingPage() {
               <div className="col-md p-5  m-3">
                 <h2>
                   {" "}
-                  <span className="text-success">
-                    {" "}
-                    Take a Cervical Cancer Test Now
-                  </span>{" "}
+                  <span class="text-success"> Welcome to CerviTest!</span>{" "}
                 </h2>
-                <p className="lead">
-                  <span className="text-dark">
+                <p class="lead">
+                  <span class="text-dark">
                     {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique deleniti possimus magnam corporis ratione facere!
+                    <p class="lead">
+                      <span class="text-dark">
+                        {" "}
+                        Get your Cervical Cancer test done right away
+                      </span>
+                    </p>
                   </span>
                 </p>
                 <p>
                   <span className="text-success">
                     {" "}
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Cumque reiciendis eius autem eveniet mollitia, at asperiores
-                    suscipit quae similique laboriosam iste minus placeat odit
-                    velit quos, nulla architecto amet voluptates?
+                    We at CerviTest provide real-time diagnosis services using a
+                    Pap / Colposcopy image test, and a detailed report about
+                    your diagnosis. Connect with your doctors online and get
+                    yourself tested for Cervical Cancer now.
                   </span>
                 </p>
                 <a className="btn btn-dark mt-4">

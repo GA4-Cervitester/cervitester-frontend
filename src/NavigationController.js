@@ -20,6 +20,7 @@ import Profile from "./pages/Profile/Profile";
 import About from "./pages/About/About";
 import Welcome from "./pages/LandingPage/landingPage";
 import learnMore from "./pages/LearnMore/LearnMore";
+import readMore from "./pages/ReadMore/ReadMore";
 
 import UserSelect from "./pages/UserSelect/UserSelect";
 import Login from "./pages/Login/Login";
@@ -35,6 +36,7 @@ export default function NavigationController() {
     <div>
       <ScrollToTop>
         <Switch>
+          <UnprotectedRoute path="/readMore" exact component={readMore} />
           <UnprotectedRoute path="/learnMore" exact component={learnMore} />
           <UnprotectedRoute path="/welcome" exact component={Welcome} />
           <UnprotectedRoute path="/userSelect" exact component={UserSelect} />

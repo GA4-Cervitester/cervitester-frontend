@@ -60,21 +60,28 @@ export default function LearnMore() {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               CerviTester
             </Typography>
-            <NavLink to={"/profile"}>
+            {/* <NavLink>
               <Button color="inherit">About Us</Button>
-            </NavLink>
+            </NavLink> */}
 
-            <NavLink to={"/reports"}>
-              <Button color="inherit">Our Services</Button>
-            </NavLink>
+            <Button color="inherit">
+              <a href="#about">About Us</a>
+            </Button>
+            <Button color="inherit">
+              <a href="#services">Our Services</a>
+            </Button>
 
-            <NavLink to={"/test"}>
-              <Button color="inherit">Community</Button>
-            </NavLink>
+            <Button color="inherit">
+              <a href="#community">Community</a>
+            </Button>
 
-            <Button color="inherit">Question</Button>
+            <Button color="inherit">
+              <a href="#questions">FAQs</a>
+            </Button>
 
-            <Button color="inherit">Contact</Button>
+            <Button color="inherit">
+              <a href="#contact">Contact</a>
+            </Button>
           </Toolbar>
         </AppBar>
       </Box>
@@ -84,14 +91,16 @@ export default function LearnMore() {
             <div className="p-3 m-3 py-3">
               <h1>
                 {" "}
-                <span className="text-dark">Get your</span>{" "}
-                <span className="text-warning"> Cervical Cancer Test</span>
+                <span class="text-dark">Get tested for </span>{" "}
+                <span class="text-warning"> Cervical Cancer </span>
               </h1>
-              <p className="lead my-5">
-                <span className="text-dark">
+              <p align="justify" class="lead my-5">
+                <span class="text-dark">
                   {" "}
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure
-                  aut perferendis temporibus nostrum amet voluptatibus.
+                  A platform which provides you the facility to get tested for
+                  Cervical Cancer and also receive a detailed report which will
+                  provide information about your cervix health, in the comfort
+                  of your home.
                 </span>
               </p>
               <button
@@ -117,223 +126,308 @@ export default function LearnMore() {
             <div className="col-md m-3 mt-5 pt-5 pb-5 py-5">
               <img
                 className="img-fluid w-100 d-none d-sm-block rounded pt-2"
-                src="/images/img19.png"
+                src="/images/img22.png"
                 alt=""
               />
             </div>
             <div className="col-md p-5 mb-2 mt-2 pt-2">
               <h2>About Us </h2>
-              <p className="lead pb-2 pt-2">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Similique deleniti possimus magnam corporis ratione facere!
+              <p align="justify" class="lead p-2">
+                We are a non profit organization who seek to solve the issue of
+                cervical cancer spread the awareness about time to time testing
+                of the cancer to reduce chances of acquiring it.
               </p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
-                reiciendis eius autem eveniet mollitia, at asperiores suscipit
-                quae similique laboriosam iste minus placeat odit velit quos,
-                nulla architecto amet voluptates?
+              <p align="justify" class="lead p-2">
+                This is a platform using which you can get tested for Cervical
+                Cancer from the comfort of your home, and also receive a
+                detailed report which will be offer sufficient proof of the
+                cancer and will come handy in the future.
               </p>
               <a href="" className="btn btn-light mt-5">
                 <i className="bi bi-chevron-right" style={{ color: "black" }} />{" "}
-                Read More
+                <NavLink to="/readMore">Read More</NavLink>
               </a>
             </div>
           </div>
         </div>
       </section>
-      {/* Newsletter */}
-      <section className="bg-primary text-light p-5">
-        <div className="container">
-          <div className="d-md-flex justify-content-between align-items-center">
-            <h3 className="mb-3 mb-md-0">Sign Up For Our Newsletter</h3>
-            <div className="input-group news-input">
+
+      {/* Boxes */}
+      <section id="services" class="p-5">
+        <div class="container">
+          <div class="row text-center g-4">
+            <h2 class="text-center text-dark pt-5 mt-4 mb-4">Our Services</h2>
+            <p class="lead text-center text-success  mt-2 mb-4">
+              These are the services we provide through this platform.
+            </p>
+            <div class="col-md mb-5 pb-5">
+              <div class="card bg-success text-light pb-3 mb-5">
+                <div class="card-body text-center">
+                  <div class="h1 mb-3 ">
+                    <i class="bi bi-person-square"></i>
+                  </div>
+                  <h3 class="card-title mb-3">Detection</h3>
+                  <p class="card-text">
+                    What more would anyone want if they will be able to detect a
+                    disease like Cervical Cancer without any hassle and also get
+                    accurate results?
+                  </p>
+                  <a href="#" class="btn btn-light">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="card bg-dark text-light pb-3 mb-5">
+                <div class="card-body text-center">
+                  <div class="h1 mb-3">
+                    <i class="bi bi-person-square"></i>
+                  </div>
+                  <h3 class="card-title mb-3">Report</h3>
+                  <p align="center" class="card-text">
+                    Along with the detection, users will also be able to
+                    download a foolproof AI generated report with detailed
+                    information
+                  </p>
+                  <a href="#" class="btn btn-light">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="card bg-success text-light pb-3 mb-5">
+                <div class="card-body text-center">
+                  <div class="h1 mb-3">
+                    <i class="bi bi-people"></i>
+                  </div>
+                  <h3 class="card-title mb-3">Doctor Assistance</h3>
+                  <p align="center" class="card-text">
+                    If the results are positive then each patient will be given
+                    a list of specialists in their locality. Users can then
+                    shoose from this list according to their choice.
+                  </p>
+                  <a href="#" class="btn btn-light">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Learn Sections */}
+      <section id="community" class="p-5 bg-success p-5">
+        <div class="container pt-5">
+          <h2 class="text-center text-white  mt-2 mb-3">Community</h2>
+          <p class="lead text-center text-white mb-3">
+            Hear more about us form some of our users.
+          </p>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="card bg-light">
+                <div class="card-body text-center">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/11.jpg"
+                    class="rounded-circle mb-3"
+                    alt=""
+                  />
+                  <h3 class="card-title mb-3">Joongi Son</h3>
+                  <p align="jsutify" class="card-text">
+                    Last year I tried this platform for my wife. At first we
+                    doubted the result, but when we took a second opinion from a
+                    gynaecologist, she confirmed the results. We were happy to
+                    not make countless trips to the hospital for the results.
+                  </p>
+                  <a href="#">
+                    <i class="bi bi-twitter text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-facebook text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-linkedin text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-instagram text-dark mx-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="card bg-light">
+                <div class="card-body text-center">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/11.jpg"
+                    class="rounded-circle mb-3"
+                    alt=""
+                  />
+                  <h3 class="card-title mb-3">Juliet Sanchez</h3>
+                  <p align="jsutify" class="card-text">
+                    Last year, I wanted to get tested for Cervical Cancer. Due
+                    to the Covid situation, I couldn't go to the clinic
+                    physically, so my friend recommended this CerviTester. I was
+                    very happy with it's functioning and usability.
+                  </p>
+                  <a href="#">
+                    <i class="bi bi-twitter text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-facebook text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-linkedin text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-instagram text-dark mx-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="card bg-light">
+                <div class="card-body text-center">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/12.jpg"
+                    class="rounded-circle mb-3"
+                    alt=""
+                  />
+                  <h3 class="card-title mb-3">Sara Felton</h3>
+                  <p align="jsutify" class="card-text">
+                    Recently I tried this platform, I was very happy with the
+                    overall experience. I really liked the feature of Doctor
+                    Assistance, as I was not at all aware of any Doctor in this
+                    field but CerviTester simplified the entire process.
+                  </p>
+                  <a href="#">
+                    <i class="bi bi-twitter text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-facebook text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-linkedin text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-instagram text-dark mx-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="card bg-light">
+                <div class="card-body text-center">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/11.jpg"
+                    class="rounded-circle mb-3"
+                    alt=""
+                  />
+                  <h3 class="card-title mb-3">Anderson Park</h3>
+                  <p align="jsutify" class="card-text">
+                    Recently, I was very doubtful about my mother's health,
+                    which is why I tried CerviTester. It is easy to use and
+                    understand and most importantly, it prodeuces the accurate
+                    results, so it is trustworthy.
+                  </p>
+                  <a href="#">
+                    <i class="bi bi-twitter text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-facebook text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-linkedin text-dark mx-1"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-instagram text-dark mx-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Question Accordion */}
+      <section class="bg-dark text-light p-5">
+        <div class="container mb-2">
+          <div class="d-md-flex justify-content-between align-items-center">
+            <h3 class="mb-3 mb-md-0">Share Your Story</h3>
+
+            <div class="input-group news-input">
               <input
                 type="text"
-                className="form-control"
-                placeholder="Enter Email"
+                class="form-control"
+                placeholder="Write your story ..."
               />
-              <button className="btn btn-dark btn-lg" type="button">
+              <button class="btn btn-success btn-lg" type="button">
                 Submit
               </button>
             </div>
           </div>
         </div>
       </section>
-      {/* Boxes */}
-      <section className="p-5">
-        <div className="container">
-          <div className="row text-center g-4">
-            <div className="col-md">
-              <div className="card bg-dark text-light">
-                <div className="card-body text-center">
-                  <div className="h1 mb-3">
-                    <i className="bi bi-laptop" />
-                  </div>
-                  <h3 className="card-title mb-3">Virtual</h3>
-                  <p className="card-text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Iure, quas quidem possimus dolorum esse eligendi?
-                  </p>
-                  <a href="#" className="btn btn-primary">
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md">
-              <div className="card bg-secondary text-light">
-                <div className="card-body text-center">
-                  <div className="h1 mb-3">
-                    <i className="bi bi-person-square" />
-                  </div>
-                  <h3 className="card-title mb-3">Hybrid</h3>
-                  <p className="card-text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Iure, quas quidem possimus dolorum esse eligendi?
-                  </p>
-                  <a href="#" className="btn btn-dark">
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md">
-              <div className="card bg-dark text-light">
-                <div className="card-body text-center">
-                  <div className="h1 mb-3">
-                    <i className="bi bi-people" />
-                  </div>
-                  <h3 className="card-title mb-3">In Person</h3>
-                  <p className="card-text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Iure, quas quidem possimus dolorum esse eligendi?
-                  </p>
-                  <a href="#" className="btn btn-primary">
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Learn Sections */}
-      <section id="learn" className="p-5">
-        <div className="container">
-          <div className="row align-items-center justify-content-between">
-            <div className="col-md">
-              <img src="img/fundamentals.svg" className="img-fluid" alt="" />
-            </div>
-            <div className="col-md p-5">
-              <h2>Learn The Fundamentals</h2>
-              <p className="lead">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Similique deleniti possimus magnam corporis ratione facere!
-              </p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
-                reiciendis eius autem eveniet mollitia, at asperiores suscipit
-                quae similique laboriosam iste minus placeat odit velit quos,
-                nulla architecto amet voluptates?
-              </p>
-              <a href="#" className="btn btn-light mt-3">
-                <i className="bi bi-chevron-right" /> Read More
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="learn" className="p-5 bg-dark text-light">
-        <div className="container">
-          <div className="row align-items-center justify-content-between">
-            <div className="col-md p-5">
-              <h2>Learn React</h2>
-              <p className="lead">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Similique deleniti possimus magnam corporis ratione facere!
-              </p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
-                reiciendis eius autem eveniet mollitia, at asperiores suscipit
-                quae similique laboriosam iste minus placeat odit velit quos,
-                nulla architecto amet voluptates?
-              </p>
-              <a href="#" className="btn btn-light mt-3">
-                <i className="bi bi-chevron-right" /> Read More
-              </a>
-            </div>
-            <div className="col-md">
-              <img src="img/react.svg" className="img-fluid" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Question Accordion */}
-      <section id="questions" className="p-5">
-        <div className="container">
-          <h2 className="text-center mb-4">Frequently Asked Questions</h2>
-          <div className="accordion accordion-flush" id="questions">
-            {/* Item 1 */}
-            <div className="accordion-item">
-              <h2 className="accordion-header">
+      <section id="questions" class="p-5 mt-3 mb-4">
+        <div class="container">
+          <h2 class="text-center mt-5 mb-4">Frequently Asked Questions</h2>
+          <div class="accordion accordion-flush" id="questions">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
                 <button
-                  className="accordion-button collapsed"
+                  class="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#question-one"
                 >
-                  Where exactly are you located?
+                  Is the test free of cost?
                 </button>
               </h2>
               <div
                 id="question-one"
-                className="accordion-collapse collapse"
+                class="accordion-collapse collapse"
                 data-bs-parent="#questions"
               >
-                <div className="accordion-body">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Numquam beatae fuga animi distinctio perspiciatis adipisci
-                  velit maiores totam tempora accusamus modi explicabo
-                  accusantium consequatur, praesentium rem quisquam molestias at
-                  quos vero. Officiis ad velit doloremque at. Dignissimos
-                  praesentium necessitatibus natus corrupti cum consequatur
-                  aliquam! Minima molestias iure quam distinctio velit.
+                <div class="accordion-body">
+                  Yes, using Cervitester, you can get tested for Cervical Cancer
+                  for free.
                 </div>
               </div>
             </div>
-            {/* Item 2 */}
-            <div className="accordion-item">
-              <h2 className="accordion-header">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
                 <button
-                  className="accordion-button collapsed"
+                  class="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#question-two"
                 >
-                  How much does it cost to attend?
+                  How will it work?
                 </button>
               </h2>
               <div
                 id="question-two"
-                className="accordion-collapse collapse"
+                class="accordion-collapse collapse"
                 data-bs-parent="#questions"
               >
-                <div className="accordion-body">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Numquam beatae fuga animi distinctio perspiciatis adipisci
-                  velit maiores totam tempora accusamus modi explicabo
-                  accusantium consequatur, praesentium rem quisquam molestias at
-                  quos vero. Officiis ad velit doloremque at. Dignissimos
-                  praesentium necessitatibus natus corrupti cum consequatur
-                  aliquam! Minima molestias iure quam distinctio velit.
+                <div class="accordion-body">
+                  It is very simple, all you have to do is sign up, choose a
+                  test of your choice, Pap-smear or Colposcopy, on proceeding
+                  with one, you will be prompted to upload a test image based on
+                  which cervical cancer will be detected and a report will be
+                  generated in order to give more information.
                 </div>
               </div>
             </div>
-            {/* Item 3 */}
-            <div className="accordion-item">
-              <h2 className="accordion-header">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
                 <button
-                  className="accordion-button collapsed"
+                  class="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#question-three"
@@ -343,196 +437,11 @@ export default function LearnMore() {
               </h2>
               <div
                 id="question-three"
-                className="accordion-collapse collapse"
+                class="accordion-collapse collapse"
                 data-bs-parent="#questions"
               >
-                <div className="accordion-body">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Numquam beatae fuga animi distinctio perspiciatis adipisci
-                  velit maiores totam tempora accusamus modi explicabo
-                  accusantium consequatur, praesentium rem quisquam molestias at
-                  quos vero. Officiis ad velit doloremque at. Dignissimos
-                  praesentium necessitatibus natus corrupti cum consequatur
-                  aliquam! Minima molestias iure quam distinctio velit.
-                </div>
-              </div>
-            </div>
-            {/* Item 4 */}
-            <div className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question-four"
-                >
-                  How Do I sign up?
-                </button>
-              </h2>
-              <div
-                id="question-four"
-                className="accordion-collapse collapse"
-                data-bs-parent="#questions"
-              >
-                <div className="accordion-body">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Numquam beatae fuga animi distinctio perspiciatis adipisci
-                  velit maiores totam tempora accusamus modi explicabo
-                  accusantium consequatur, praesentium rem quisquam molestias at
-                  quos vero. Officiis ad velit doloremque at. Dignissimos
-                  praesentium necessitatibus natus corrupti cum consequatur
-                  aliquam! Minima molestias iure quam distinctio velit.
-                </div>
-              </div>
-            </div>
-            {/* Item 5 */}
-            <div className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question-five"
-                >
-                  Do you help me find a job?
-                </button>
-              </h2>
-              <div
-                id="question-five"
-                className="accordion-collapse collapse"
-                data-bs-parent="#questions"
-              >
-                <div className="accordion-body">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Numquam beatae fuga animi distinctio perspiciatis adipisci
-                  velit maiores totam tempora accusamus modi explicabo
-                  accusantium consequatur, praesentium rem quisquam molestias at
-                  quos vero. Officiis ad velit doloremque at. Dignissimos
-                  praesentium necessitatibus natus corrupti cum consequatur
-                  aliquam! Minima molestias iure quam distinctio velit.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="instructors" className="p-5 bg-primary">
-        <div className="container">
-          <h2 className="text-center text-white">Our Instructors</h2>
-          <p className="lead text-center text-white mb-5">
-            Our instructors all have 5+ years working as a web developer in the
-            industry
-          </p>
-          <div className="row g-4">
-            <div className="col-md-6 col-lg-3">
-              <div className="card bg-light">
-                <div className="card-body text-center">
-                  <img
-                    src="https://randomuser.me/api/portraits/men/11.jpg"
-                    className="rounded-circle mb-3"
-                    alt=""
-                  />
-                  <h3 className="card-title mb-3">John Doe</h3>
-                  <p className="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
-                  </p>
-                  <a href="#">
-                    <i className="bi bi-twitter text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-facebook text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-linkedin text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-instagram text-dark mx-1" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <div className="card bg-light">
-                <div className="card-body text-center">
-                  <img
-                    src="https://randomuser.me/api/portraits/women/11.jpg"
-                    className="rounded-circle mb-3"
-                    alt=""
-                  />
-                  <h3 className="card-title mb-3">Jane Doe</h3>
-                  <p className="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
-                  </p>
-                  <a href="#">
-                    <i className="bi bi-twitter text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-facebook text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-linkedin text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-instagram text-dark mx-1" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <div className="card bg-light">
-                <div className="card-body text-center">
-                  <img
-                    src="https://randomuser.me/api/portraits/men/12.jpg"
-                    className="rounded-circle mb-3"
-                    alt=""
-                  />
-                  <h3 className="card-title mb-3">Steve Smith</h3>
-                  <p className="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
-                  </p>
-                  <a href="#">
-                    <i className="bi bi-twitter text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-facebook text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-linkedin text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-instagram text-dark mx-1" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <div className="card bg-light">
-                <div className="card-body text-center">
-                  <img
-                    src="https://randomuser.me/api/portraits/women/12.jpg"
-                    className="rounded-circle mb-3"
-                    alt=""
-                  />
-                  <h3 className="card-title mb-3">Sara Smith</h3>
-                  <p className="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
-                  </p>
-                  <a href="#">
-                    <i className="bi bi-twitter text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-facebook text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-linkedin text-dark mx-1" />
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-instagram text-dark mx-1" />
-                  </a>
+                <div class="accordion-body">
+                  To know more about Cervical Cancer, please click on Read More.
                 </div>
               </div>
             </div>
@@ -540,35 +449,41 @@ export default function LearnMore() {
         </div>
       </section>
       {/* Contact & Map */}
-      <section className="p-5">
-        <div className="container">
-          <div className="row g-4">
-            <div className="col-md">
-              <h2 className="text-center mb-4">Contact Info</h2>
-              <ul className="list-group list-group-flush lead">
-                <li className="list-group-item">
-                  <span className="fw-bold">Main Location:</span> 50 Main st
-                  Boston MA
+      <section id="contact" class="p-5  bg-success mt-5">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md">
+              <h2 class="text-center text-light mb-4">Contact Info</h2>
+              <ul class="list-group list-group-flush lead bg-success text-light">
+                <li class="list-group-item bg-success text-light">
+                  <span class="fw-bold">Main Location:</span> 50 Main st Boston
+                  MA
                 </li>
-                <li className="list-group-item">
-                  <span className="fw-bold">Enrollment Phone:</span> (555)
-                  555-5555
+                <li class="list-group-item bg-success text-light">
+                  <span class="fw-bold">Enrollment Phone:</span> (555) 555-5555
                 </li>
-                <li className="list-group-item">
-                  <span className="fw-bold">Student Phone:</span> (333) 333-3333
+                <li class="list-group-item bg-success text-light">
+                  <span class="fw-bold">Student Phone:</span> (333) 333-3333
                 </li>
-                <li className="list-group-item">
-                  <span className="fw-bold">Enrollment Email:</span> (555)
+                <li class="list-group-item bg-success text-light">
+                  <span class="fw-bold">Enrollment Email:</span> (555)
                   enroll@frontendbc.test
                 </li>
-                <li className="list-group-item">
-                  <span className="fw-bold">Student Email:</span>
+                <li class="list-group-item bg-success text-light">
+                  <span class="fw-bold">Student Email:</span>
                   student@frontendbc.test
                 </li>
               </ul>
             </div>
-            <div className="col-md">
-              <div id="map" />
+            <div class="col-md">
+              <div id="map">
+                <img
+                  class="img-fluid w-75  d-none d-sm-block "
+                  src="img/img1.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>
