@@ -12,15 +12,18 @@ import { register } from "../../api/auth";
 import "../../styles/LoginAndUserSelect.css";
 import { set } from "date-fns";
 
-export default function Register(props) {
+export default function RegisterPatient(props) {
+  // const history = useHistory();
+  // let userType;
+  // if (props.location.userType === undefined) {
+  //   //history.push('/userSelect')
+  //   props.location.userType = "patient";
+  // } else {
+  //   userType = props.location.userType;
+  // }
   const history = useHistory();
   let userType;
-  if (props.location.userType === undefined) {
-    //history.push('/userSelect')
-    props.location.userType = "patient";
-  } else {
-    userType = props.location.userType;
-  }
+  props.location.userType = "patient";
 
   const dispatch = useDispatch();
 

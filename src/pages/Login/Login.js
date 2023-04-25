@@ -125,8 +125,22 @@ export default function Login(props) {
                   <a href="#" class="nav-link">
                     <span class="text-light"> Don't have an account ?</span>{" "}
                     <span class="text-warning">
-                      {" "}
-                      <NavLink to={"/register"}>Sign Up</NavLink>
+                      {props.location.userType == "patient" ? (
+                        <NavLink to={"/registerPatient"}>Sign Up</NavLink>
+                      ) : (
+                        <></>
+                      )}{" "}
+                      {props.location.userType == "doctor" ? (
+                        <NavLink to={"/registerDoctor"}>Sign Up</NavLink>
+                      ) : (
+                        <></>
+                      )}{" "}
+                      {props.location.userType == "tester" ? (
+                        <NavLink to={"/registerTester"}>Sign Up</NavLink>
+                      ) : (
+                        <></>
+                      )}{" "}
+                      {/* <NavLink to={"/registerDoctor"}>Sign Up</NavLink> */}
                     </span>{" "}
                   </a>
                 </h6>

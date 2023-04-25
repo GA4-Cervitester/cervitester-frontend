@@ -24,7 +24,9 @@ import readMore from "./pages/ReadMore/ReadMore";
 
 import UserSelect from "./pages/UserSelect/UserSelect";
 import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
+import RegisterPatient from "./pages/RegisterPatient/RegisterPatient";
+import RegisterDoctor from "./pages/RegisterDoctor/RegisterDoctor";
+import RegisterTester from "./pages/RegisterTester/RegisterTester";
 import DoctorRequests from "./pages/DoctorRequests/DoctorRequests";
 import Footer from "./components/Footer.js";
 
@@ -36,12 +38,27 @@ export default function NavigationController() {
     <div>
       <ScrollToTop>
         <Switch>
+          <UnprotectedRoute path="/" exact component={Welcome} />
           <UnprotectedRoute path="/readMore" exact component={readMore} />
           <UnprotectedRoute path="/learnMore" exact component={learnMore} />
           <UnprotectedRoute path="/welcome" exact component={Welcome} />
           <UnprotectedRoute path="/userSelect" exact component={UserSelect} />
           <UnprotectedRoute path="/login" exact component={Login} />
-          <UnprotectedRoute path="/register" exact component={Register} />
+          <UnprotectedRoute
+            path="/registerPatient"
+            exact
+            component={RegisterPatient}
+          />
+          <UnprotectedRoute
+            path="/registerDoctor"
+            exact
+            component={RegisterDoctor}
+          />
+          <UnprotectedRoute
+            path="/registerTester"
+            exact
+            component={RegisterTester}
+          />
         </Switch>
 
         {isAuth ? (
