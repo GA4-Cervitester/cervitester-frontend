@@ -12,7 +12,7 @@ import { register } from "../../api/auth";
 import "../../styles/LoginAndUserSelect.css";
 import { set } from "date-fns";
 
-export default function RegisterPatient(props) {
+export default function Register(props) {
   // const history = useHistory();
   // let userType;
   // if (props.location.userType === undefined) {
@@ -23,7 +23,6 @@ export default function RegisterPatient(props) {
   // }
   const history = useHistory();
   let userType;
-  props.location.userType = "patient";
 
   const dispatch = useDispatch();
 
@@ -58,28 +57,33 @@ export default function RegisterPatient(props) {
     }
     if (errors.length === 0) {
       setFormErrors(null);
-      register(userType, phone, dob, email, name, password).then((result) => {
-        console.log(result);
-        if (result.error) {
-          setError(result.error);
-          setMessage(null);
-          return;
+      register(userType, phone, dob, email, name, password).then(
+        (result) => {
+          console.log(result);
+          if (result.error) {
+            setError(result.error);
+            setMessage(null);
+            return;
+          }
+          if (userType === "doctor") {
+            setError(null);
+            setMessage(
+              "You will be able to login to your account once your account has been vefiried by the admin!"
+            );
+            return;
+          }
+          if (result.token) {
+            setError(null);
+            localStorage.setItem("accessToken", result.token);
+            localStorage.setItem("userType", userType);
+            dispatch(logIn({ accessToken: result.token, userType: userType }));
+            history.push("/");
+          }
+        },
+        (error) => {
+          console.log(error);
         }
-        if (userType === "doctor") {
-          setError(null);
-          setMessage(
-            "You will be able to login to your account once your account has been vefiried by the admin!"
-          );
-          return;
-        }
-        if (result.token) {
-          setError(null);
-          localStorage.setItem("accessToken", result.token);
-          localStorage.setItem("userType", userType);
-          dispatch(logIn({ accessToken: result.token, userType: userType }));
-          history.push("/");
-        }
-      });
+      );
     }
   };
 
@@ -119,7 +123,7 @@ export default function RegisterPatient(props) {
               fontWeight: 600,
             }}
           >
-            {props.location.userType} Registration
+            {localStorage.getItem("userType")} Registration
           </div>
           {error === null ? null : (
             <div className="authFormErrorSection">
@@ -208,7 +212,14 @@ export default function RegisterPatient(props) {
               variant="contained"
               className="loginButton"
               onClick={() => {
-                formValidation(userType, phone, dob, email, name, password);
+                formValidation(
+                  localStorage.getItem("userType"),
+                  phone,
+                  dob,
+                  email,
+                  name,
+                  password
+                );
               }}
             >
               Register

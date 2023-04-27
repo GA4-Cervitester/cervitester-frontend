@@ -24,9 +24,7 @@ import readMore from "./pages/ReadMore/ReadMore";
 
 import UserSelect from "./pages/UserSelect/UserSelect";
 import Login from "./pages/Login/Login";
-import RegisterPatient from "./pages/RegisterPatient/RegisterPatient";
-import RegisterDoctor from "./pages/RegisterDoctor/RegisterDoctor";
-import RegisterTester from "./pages/RegisterTester/RegisterTester";
+import Register from "./pages/Register/Register";
 import DoctorRequests from "./pages/DoctorRequests/DoctorRequests";
 import Footer from "./components/Footer.js";
 
@@ -44,21 +42,7 @@ export default function NavigationController() {
           <UnprotectedRoute path="/welcome" exact component={Welcome} />
           <UnprotectedRoute path="/userSelect" exact component={UserSelect} />
           <UnprotectedRoute path="/login" exact component={Login} />
-          <UnprotectedRoute
-            path="/registerPatient"
-            exact
-            component={RegisterPatient}
-          />
-          <UnprotectedRoute
-            path="/registerDoctor"
-            exact
-            component={RegisterDoctor}
-          />
-          <UnprotectedRoute
-            path="/registerTester"
-            exact
-            component={RegisterTester}
-          />
+          <UnprotectedRoute path="/register" exact component={Register} />
         </Switch>
 
         {isAuth ? (

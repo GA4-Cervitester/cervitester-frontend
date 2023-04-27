@@ -90,12 +90,12 @@ export default function UserSelect() {
                   Login As
                 </span>
               </h1>
-              <p class="lead my-4 mb-5 mt-2 pb-3">
+              {/* <p class="lead my-4 mb-5 mt-2 pb-3">
                 <span class="text-dark align-items-center ">
                   {" "}
                   Lorem ipsum dolor sit amet.
                 </span>
-              </p>
+              </p> */}
               <div class="d-grid gap-4 col-9 mx-auto">
                 {/* <NavLink to={{ pathname: "/login", userType: "patient" }}>
                   <Button
@@ -113,27 +113,29 @@ export default function UserSelect() {
                     Doctor
                   </Button>
                 </NavLink> */}
-                <a
-                  href=""
+                <button
                   class="btn btn-success btn-lg active"
-                  role="button"
                   aria-pressed="true"
+                  onClick={() => {
+                    localStorage.setItem("userType", "patient");
+                  }}
                 >
                   <NavLink to={{ pathname: "/Login", userType: "patient" }}>
                     Patient
                   </NavLink>
-                </a>
-                <a
-                  href=""
+                </button>
+                <button
                   class="btn btn-success btn-lg active"
-                  role="button"
                   aria-pressed="true"
+                  onClick={() => {
+                    localStorage.setItem("userType", "doctor");
+                  }}
                 >
                   <NavLink to={{ pathname: "/Login", userType: "doctor" }}>
                     Doctor
                   </NavLink>
-                </a>
-                <a
+                </button>
+                {/* <a
                   href=""
                   class="btn btn-success btn-lg active"
                   role="button"
@@ -142,7 +144,7 @@ export default function UserSelect() {
                   <NavLink to={{ pathname: "/Login", userType: "tester" }}>
                     Tester
                   </NavLink>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
