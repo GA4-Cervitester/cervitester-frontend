@@ -102,13 +102,13 @@ export default function Login(props) {
           </div>
         </div>
       </nav> */}
-      <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-2 fixed-top ">
+      <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div className="container ">
-          <h4>
+          <h5>
             <a href="#" className="nav-link">
-              <span className="text-light"> Cervi Tester </span>{" "}
+              <span className="text-light"> CerviTester </span>{" "}
             </a>
-          </h4>
+          </h5>
           <button
             class="navbar-toggler"
             type="button"

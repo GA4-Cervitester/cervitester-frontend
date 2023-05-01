@@ -65,13 +65,13 @@ export default function Register(props) {
             setMessage(null);
             return;
           }
-          if (userType === "doctor") {
-            setError(null);
-            setMessage(
-              "You will be able to login to your account once your account has been vefiried by the admin!"
-            );
-            return;
-          }
+          // if (userType === "doctor") {
+          //   setError(null);
+          //   setMessage(
+          //     "You will be able to login to your account once your account has been vefiried by the admin!"
+          //   );
+          //   return;
+          // }
           if (result.token) {
             setError(null);
             localStorage.setItem("accessToken", result.token);

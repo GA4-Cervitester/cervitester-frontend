@@ -477,12 +477,7 @@ export default function LearnMore() {
             </div>
             <div class="col-md">
               <div id="map">
-                <img
-                  class="img-fluid w-75  d-none d-sm-block "
-                  src="img/img1.png"
-                  class="img-fluid"
-                  alt=""
-                />
+                <img src="img/img1.png" class="img-fluid" alt="" />
               </div>
             </div>
           </div>

@@ -50,7 +50,7 @@ export default function NavigationController() {
             {/* <UserIdentifierBar userType={userType} /> */}
             {/* <SideBar /> */}
             <NavBar />
-            <BottomNav />
+            {/* <BottomNav /> */}
           </div>
         ) : null}
 
