@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Grid } from "@mui/material";
 import "../../styles/ShowReport.css";
-import jsPDF from "jspdf";
+//import jsPDF from "jspdf";
 import * as htmlToImage from "html-to-image";
 import { toPng } from "html-to-image";
 import { formateTimeStamp } from "../../helpers";
@@ -13,6 +13,9 @@ import ReportChat from "../../components/ReportChat/ReportChat";
 import SelectDoctor from "../../components/SelectDoctor/SelectDoctor";
 import { Link } from "@mui/material";
 import { div } from "@tensorflow/tfjs";
+//import html2canvas from "html2canvas";
+//import { useReactToPrint } from "react-to-print";
+//import { PDFDownloadLink } from "@react-pdf/renderer";
 
 export default function ShowReport(props) {
   const [data, setData] = useState(null);
@@ -58,28 +61,36 @@ export default function ShowReport(props) {
   const closeChatWindow = () => setWindowOpen(false);
   const closeDoctorModal = () => setDoctorModal(false);
 
-  const generatePDF = () => {
-    var doc = new jsPDF("p", "pt");
+  // var doc = new jsPDF("p", "pt");
+  // let doctor = "Not Assigned";
+  // let result = null;
+  // if (data.doctor !== null) {
+  //   doctor = data.doctor.name;
+  // }
+  // if (data.modelFeedback === true) result = "Positive";
+  // if (data.modelFeedback === false) result = "Negative";
+  // doc.addFont("helvetica", "normal");
+  // doc.text(20, 60, "Patient: " + data.patient.name);
+  // doc.text(20, 90, "Report ID: " + data.id);
+  // doc.text(20, 120, "Created On: " + formateTimeStamp(data.createdTs));
+  // doc.text(20, 150, "Last Updated On: " + formateTimeStamp(data.updatedTs));
+  // doc.text(20, 180, "Status: " + data.status);
+  // doc.text(20, 210, "Doctor: " + doctor);
+  // doc.text(20, 240, "Result: " + result);
+  // doc.save("demo.pdf");
 
-    let doctor = "Not Assigned";
-    let result = null;
+  // const componentRef = useRef();
 
-    if (data.doctor !== null) {
-      doctor = data.doctor.name;
-    }
-
-    if (data.modelFeedback === true) result = "Positive";
-    if (data.modelFeedback === false) result = "Negative";
-    doc.addFont("helvetica", "normal");
-    doc.text(20, 60, "Patient: " + data.patient.name);
-    doc.text(20, 90, "Report ID: " + data.id);
-    doc.text(20, 120, "Created On: " + formateTimeStamp(data.createdTs));
-    doc.text(20, 150, "Last Updated On: " + formateTimeStamp(data.updatedTs));
-    doc.text(20, 180, "Status: " + data.status);
-    doc.text(20, 210, "Doctor: " + doctor);
-    doc.text(20, 240, "Result: " + result);
-    doc.save("demo.pdf");
-  };
+  // const downloadFileDocument = useReactToPrint({
+  //   content: () => componentRef.current,
+  // });
+  // const input = document.getElementById(rootElementId);
+  // html2canvas(input).then((canvas) => {
+  //   const imgData = canvas.toDataURL("image/png");
+  //   const pdf = new jsPDF("p", "pt", "a4");
+  //   pdf.addImage(imgData, "JPEG", 10, 50);
+  //   pdf.save(`${downloadFileName}`);
+  // });
 
   if (data === null) return null;
 
@@ -541,7 +552,12 @@ export default function ShowReport(props) {
         <Link
           href={`https://cervi-test-pccoe.herokuapp.com/detection/report?id=${data.id}`}
         >
-          <Button variant="contained">Download PDF</Button>
+          <Button
+            variant="contained"
+            //onClick={downloadFileDocument("pageToDownload", "report")}
+          >
+            Download PDF
+          </Button>
         </Link>
         {userType === "doctor" ? null : data.doctor === null ? (
           <Button
