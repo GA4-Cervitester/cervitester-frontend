@@ -31,7 +31,7 @@ export default function Login(props) {
       dispatch(
         logIn({ accessToken: result.access, userType: result.user_type })
       );
-      history.push("/");
+      history.push("/profile");
     });
   };
 

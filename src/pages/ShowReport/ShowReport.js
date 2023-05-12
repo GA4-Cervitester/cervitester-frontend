@@ -91,6 +91,14 @@ export default function ShowReport(props) {
   //   pdf.addImage(imgData, "JPEG", 10, 50);
   //   pdf.save(`${downloadFileName}`);
   // });
+  // const downloadPDF = () => {
+  //   var html_to_pdf = require("html-pdf-node");
+  //   let options = { format: "A4" };
+  //   let file = { content: "<h1>Welcome to html-pdf-node</h1>" };
+  //   html_to_pdf.generatePdf(file, options).then((pdfBuffer) => {
+  //     console.log("PDF Buffer:-", pdfBuffer);
+  //   });
+  // };
 
   if (data === null) return null;
 
@@ -224,6 +232,7 @@ export default function ShowReport(props) {
     //     reportData={data}
     //   />
     // </div>
+
     <div style={{ paddingBottom: "30px" }}>
       <section id="header" className="p-5">
         <div className="container">
@@ -241,7 +250,7 @@ export default function ShowReport(props) {
             </div>
             <div className="card">
               <div className="card-body">
-                <h6 className="card-title">Refrence </h6>
+                <h6 className="card-title">Doctor </h6>
                 <p className="card-text">
                   {data.doctor !== null ? (
                     <span>{data.doctor.name}</span>
@@ -405,13 +414,6 @@ export default function ShowReport(props) {
                     </div>
                   </div>
                 </div>
-                <div className="card" style={{ width: "18rem" }}>
-                  <img
-                    className="card-img-top"
-                    src="img/sign.png"
-                    alt="doctor sign"
-                  />
-                </div>
               </div>
             </section>
             {/* Extra info*/}
@@ -552,12 +554,7 @@ export default function ShowReport(props) {
         <Link
           href={`https://cervi-test-pccoe.herokuapp.com/detection/report?id=${data.id}`}
         >
-          <Button
-            variant="contained"
-            //onClick={downloadFileDocument("pageToDownload", "report")}
-          >
-            Download PDF
-          </Button>
+          <Button variant="contained">Download PDF</Button>
         </Link>
         {userType === "doctor" ? null : data.doctor === null ? (
           <Button

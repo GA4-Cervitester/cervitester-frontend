@@ -172,9 +172,6 @@ export default function LearnMore() {
                     disease like Cervical Cancer without any hassle and also get
                     accurate results?
                   </p>
-                  <a href="#" class="btn btn-light">
-                    Read More
-                  </a>
                 </div>
               </div>
             </div>
@@ -190,9 +187,6 @@ export default function LearnMore() {
                     download a foolproof AI generated report with detailed
                     information
                   </p>
-                  <a href="#" class="btn btn-light">
-                    Read More
-                  </a>
                 </div>
               </div>
             </div>
@@ -208,9 +202,6 @@ export default function LearnMore() {
                     a list of specialists in their locality. Users can then
                     shoose from this list according to their choice.
                   </p>
-                  <a href="#" class="btn btn-light">
-                    Read More
-                  </a>
                 </div>
               </div>
             </div>
