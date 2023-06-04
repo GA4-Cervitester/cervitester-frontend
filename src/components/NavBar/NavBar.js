@@ -253,10 +253,6 @@ export default function PAppBar(props) {
             <Button color="inherit">Order Test</Button>
           </NavLink>
 
-          <Button color="inherit">Appointments</Button>
-
-          <Button color="inherit">Help</Button>
-
           <Button
             className="sideBarListButton"
             onClick={() => {

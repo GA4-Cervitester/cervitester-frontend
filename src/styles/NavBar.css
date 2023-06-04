@@ -1,11 +1,11 @@
-.appBarWrapper{
+/* .appBarWrapper{
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 80px;
-  }
+  } */
   
-  .appBar{
+  /* .appBar{
     background-color: transparent;
     color: black;
     margin-top: 15px;
@@ -14,7 +14,7 @@
     background-color: #f2f6fe;
     z-index: 1201;
   
-  }
+  } */
   
   .scrollShadow{
     box-shadow: 0 10px 20px -20px rgba(0, 0, 0, 0.1);

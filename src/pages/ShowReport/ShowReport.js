@@ -28,6 +28,8 @@ export default function ShowReport(props) {
 
   const token = useSelector((state) => state.auth.accessToken);
   const userType = useSelector((state) => state.auth.userType);
+  // const [stage, setStage] = useState(0);
+  // const [percentage, setPercentage] = useState(0);
 
   const fetchDoctors = (token) => {
     getDoctors(token)
@@ -43,12 +45,25 @@ export default function ShowReport(props) {
     } else {
       setData(props.location.data);
       // setOtherData(JSON.parse(props.location.data.other_data))
-      setConfidence(randomNumber(65, 96).toFixed(2));
+      //setConfidence(randomNumber(65, 96).toFixed(2));
     }
     console.log(data);
     console.log(otherData);
     console.log(doctorsList);
   }, [data]);
+
+  // useEffect(() => {
+  //   setPercentage(data.roundedRatio * 100);
+  //   if (percentage >= 80) {
+  //     setStage(4);
+  //   } else if (percentage >= 60 && percentage < 80) {
+  //     setStage(3);
+  //   } else if (percentage >= 40 && percentage < 70) {
+  //     setStage(2);
+  //   } else {
+  //     setStage(1);
+  //   }
+  // }, []);
 
   const openChatWindow = () => {
     setWindowOpen(true);
@@ -304,10 +319,10 @@ export default function ShowReport(props) {
                     <p className="mb-0">DIAGNOSIS/Result</p>
                   </div>
                   <div className="col-sm-9">
-                    {data.modelFeedback === true ? (
-                      <p className="text-muted mb-0">Result : Positive</p>
+                    {data.roundedRatio * 100 === 100 ? (
+                      <p className="text-muted mb-0">Result : Negative</p>
                     ) : (
-                      <p>Result: Negative</p>
+                      <p>Result: Positive</p>
                     )}
                   </div>
                 </div>
@@ -344,39 +359,47 @@ export default function ShowReport(props) {
                       <div className="card-body">
                         <div className="row">
                           <div className="col-sm-5">
-                            <p className="mb-0">No . of abnormal Cell</p>
+                            <p className="mb-0">No . of normal Cell</p>
                           </div>
                           <div className="col-sm-7">
-                            <p className="text-muted mb-0">16</p>
-                          </div>
-                        </div>
-                        <hr />
-                        <div className="row">
-                          <div className="col-sm-5">
-                            <p className="mb-0">cell size</p>
-                          </div>
-                          <div className="col-sm-7">
-                            <p className="text-muted mb-0">43.5</p>
-                          </div>
-                        </div>
-                        <hr />
-                        <div className="row">
-                          <div className="col-sm-5">
-                            <p className="mb-0">Cytoplasm size</p>
-                          </div>
-                          <div className="col-sm-7">
-                            <p className="text-muted mb-0">20.5</p>
+                            <p className="text-muted mb-0">
+                              {data.normalCount}
+                            </p>
                           </div>
                         </div>
                         <hr />
                         <div className="row">
                           <div className="col-sm-5">
                             <p className="mb-0">
-                              Cell - Cytoplasm Nucleus ratio :
+                              Ratio of normal cells to total cells{" "}
                             </p>
                           </div>
                           <div className="col-sm-7">
-                            <p className="text-muted mb-0">3.5</p>
+                            <p className="text-muted mb-0">
+                              {data.roundedRatio}
+                            </p>
+                          </div>
+                        </div>
+                        <hr />
+                        <div className="row">
+                          <div className="col-sm-5">
+                            <p className="mb-0">Normal Percentage</p>
+                          </div>
+                          <div className="col-sm-7">
+                            <p className="text-muted mb-0">
+                              {data.roundedRatio * 100}
+                            </p>
+                          </div>
+                        </div>
+                        <hr />
+                        <div className="row">
+                          <div className="col-sm-5">
+                            <p className="mb-0">No. of abnoral cells :</p>
+                          </div>
+                          <div className="col-sm-7">
+                            <p className="text-muted mb-0">
+                              {data.abnormalCount}
+                            </p>
                           </div>
                         </div>
                         <hr />
@@ -385,16 +408,28 @@ export default function ShowReport(props) {
                             <p className="mb-0">Stage</p>
                           </div>
                           <div className="col-sm-7">
-                            <p className="text-muted mb-0">1</p>
-                          </div>
-                        </div>
-                        <hr />
-                        <div className="row">
-                          <div className="col-sm-5">
-                            <p className="mb-0">Confidence</p>
-                          </div>
-                          <div className="col-sm-7">
-                            <p className="text-muted mb-0">60%</p>
+                            {data.roundedRatio * 100 >= 80 ? (
+                              <p className="text-muted mb-0">4</p>
+                            ) : (
+                              <></>
+                            )}
+                            {data.roundedRatio * 100 >= 60 &&
+                            data.roundedRatio * 100 < 80 ? (
+                              <p className="text-muted mb-0">3</p>
+                            ) : (
+                              <></>
+                            )}
+                            {data.roundedRatio * 100 >= 40 &&
+                            data.roundedRatio * 100 < 60 ? (
+                              <p className="text-muted mb-0">2</p>
+                            ) : (
+                              <></>
+                            )}
+                            {data.roundedRatio * 100 < 40 ? (
+                              <p className="text-muted mb-0">1</p>
+                            ) : (
+                              <></>
+                            )}
                           </div>
                         </div>
                         <hr />
