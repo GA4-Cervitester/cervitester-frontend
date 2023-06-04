@@ -438,10 +438,103 @@ export default function ShowReport(props) {
                             <p className="mb-0">Conclusion</p>
                           </div>
                           <div className="col-sm-7">
-                            <p className="text-muted mb-0">
-                              Lorem ipsum dolor, sit amet consectetur
-                              adipisicing elit. Inventore, cumque.
-                            </p>
+                            {data.roundedRatio * 100 >= 80 ? (
+                              <p className="text-muted mb-0">
+                                Treatment options may include:{" "}
+                                <ul>
+                                  <li>
+                                    Chemotherapy: Often the primary treatment
+                                    option for Stage IV cervical cancer.{" "}
+                                  </li>
+                                  <li>
+                                    Targeted therapy: Medications that
+                                    specifically target cancer cells.
+                                  </li>
+                                  <li>
+                                    Immunotherapy: Uses the body's immune system
+                                    to fight cancer.{" "}
+                                  </li>
+                                  <li>
+                                    Palliative care: Aimed at symptom management
+                                    and improving comfort.
+                                  </li>
+                                </ul>
+                              </p>
+                            ) : (
+                              <></>
+                            )}
+                            {data.roundedRatio * 100 >= 60 &&
+                            data.roundedRatio * 100 < 80 ? (
+                              <p className="text-muted mb-0">
+                                Treatment options may include:{" "}
+                                <ul>
+                                  <li>
+                                    Chemoradiation therapy: Combining
+                                    chemotherapy and radiation therapy.
+                                  </li>
+                                  <li>
+                                    Surgery: In some cases, removal of lymph
+                                    nodes or other affected tissues may be
+                                    recommended.
+                                  </li>
+                                  <li>
+                                    Palliative care: Focused on managing
+                                    symptoms and improving quality of life.
+                                  </li>
+                                </ul>
+                              </p>
+                            ) : (
+                              <></>
+                            )}
+                            {data.roundedRatio * 100 >= 40 &&
+                            data.roundedRatio * 100 < 60 ? (
+                              <p className="text-muted mb-0">
+                                Treatment options may include:{" "}
+                                <ul>
+                                  <li>
+                                    Surgery: Radical hysterectomy or pelvic
+                                    exenteration (removal of the uterus, cervix,
+                                    and nearby affected tissues).
+                                  </li>
+                                  <li>
+                                    Radiation therapy: External beam radiation
+                                    and/or brachytherapy.
+                                  </li>
+                                  <li>
+                                    Chemotherapy: Often given in combination
+                                    with radiation therapy.
+                                  </li>
+                                </ul>
+                              </p>
+                            ) : (
+                              <></>
+                            )}
+                            {data.roundedRatio * 100 < 40 ? (
+                              <p className="text-muted mb-0">
+                                Treatment options may include:{" "}
+                                <ul>
+                                  <li>
+                                    Surgery: Options include a radical
+                                    hysterectomy (removal of the cervix, uterus,
+                                    and nearby tissues) or a trachelectomy
+                                    (removal of the cervix and upper vagina
+                                    while preserving fertility).
+                                  </li>
+                                  <li>
+                                    Radiation therapy: External beam radiation
+                                    or brachytherapy (internal radiation) to
+                                    target the cancerous cells.
+                                  </li>
+                                  <li>
+                                    Chemotherapy: May be used in combination
+                                    with radiation therapy (chemoradiation) to
+                                    enhance its effectiveness.
+                                  </li>
+                                </ul>
+                              </p>
+                            ) : (
+                              <></>
+                            )}
                           </div>
                         </div>
                         <hr />
